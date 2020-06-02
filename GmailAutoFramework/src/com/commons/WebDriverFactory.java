@@ -1,4 +1,4 @@
-package com.sps.dc4.commons;
+package com.commons;
 
 import java.awt.AWTException;
 import java.awt.Robot;

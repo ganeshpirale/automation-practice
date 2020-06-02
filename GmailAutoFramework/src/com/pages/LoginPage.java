@@ -1,4 +1,4 @@
-package com.sps.dc4.pages;
+package com.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.relevantcodes.extentreports.LogStatus;
-import com.sps.dc4.commons.WebDriverFactory; 
+import com.commons.WebDriverFactory;
+import com.relevantcodes.extentreports.LogStatus; 
 
 public class LoginPage {
 	

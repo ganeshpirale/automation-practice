@@ -1,8 +1,8 @@
-package com.sps.dc4.dataproviders;
+package com.dataproviders;
 
 import org.testng.annotations.DataProvider;
 
-import com.sps.dc4.commons.ExcelDataConfig;
+import com.commons.ExcelDataConfig;
 
 public class DataProviders {
 

@@ -1,12 +1,11 @@
-package com.sps.dc4.testscripts;
+package com.testscripts;
 
 import org.testng.annotations.Test;
 
-import com.sps.dc4.commons.WebDriverFactory;
-import com.sps.dc4.dataproviders.DataProviders;
- 
-import com.sps.dc4.pages.OpenEmail;
-import com.sps.dc4.pages.LoginPage; 
+import com.commons.WebDriverFactory;
+import com.dataproviders.DataProviders;
+import com.pages.LoginPage;
+import com.pages.OpenEmail; 
 
 // This is final script to edit jira 
 
@@ -28,7 +27,7 @@ public class GmailAutomationTest extends WebDriverFactory {
 	public void successfulLogin(String ficsTask, /*String fReviewEmail,String sReviewEmail, String defectcntadd,*/String logadd) throws Exception
 	{
 		openEmail = new OpenEmail();
-		openEmail.OpenEmail(ficsTask,/*fReviewEmail, sReviewEmail, defectcntadd,*/ logadd);
+//		openEmail.OpenEmail();
 		
 	}
 	
