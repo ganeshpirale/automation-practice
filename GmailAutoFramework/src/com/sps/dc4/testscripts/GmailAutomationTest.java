@@ -24,7 +24,7 @@ public class GmailAutomationTest extends WebDriverFactory {
 		login.login();
 		Thread.sleep(2000);
 	}
-//	@Test(dataProvider="CompanyNameProvider", dataProviderClass=DataProviders.class, priority = 2)
+//	@Test(dataProvider="CompanyNameProvider", dataProviderClass=DataProviders.class, priority = 2)  // this is not yet used
 	public void successfulLogin(String ficsTask, /*String fReviewEmail,String sReviewEmail, String defectcntadd,*/String logadd) throws Exception
 	{
 		openEmail = new OpenEmail();
