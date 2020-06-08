@@ -53,7 +53,7 @@ public class LoginPage {
 //		signIn.click();
 		
 		
-		  signIn = driver.findElement(By.xpath(".//div[@class='h-c-header__cta h-c-header__cta--tier-two']/ul[1]/li/a[@ga-event-action='sign in']")); 
+//		  signIn = driver.findElement(By.xpath(".//div[@class='h-c-header__cta h-c-header__cta--tier-two']/ul[1]/li/a[@ga-event-action='sign in']")); 
 		  JavascriptExecutor executor = (JavascriptExecutor)driver;
 		  executor.executeScript("arguments[0].click();", signIn);
 		  
@@ -70,9 +70,11 @@ public class LoginPage {
 			WebElement passwordNext;
 			  
 			
-			driver.findElement(By.xpath(".//input[@type='email']")).sendKeys("seleniumautomationpracticetest@gmail.com");
+//			driver.findElement(By.xpath(".//input[@type='email']")).sendKeys("seleniumautomationpracticetest@gmail.com");
+			username.sendKeys("seleniumautomationpracticetest@gmail.com");
 			
-			driver.findElement(By.xpath(".//span[@class='RveJvd snByac'][text()='Next']")).click();
+//			driver.findElement(By.xpath(".//span[@class='RveJvd snByac'][text()='Next']")).click();
+			usernameNext.click();
 		
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class='aXBtI I0VJ4d Wic03c']//input[@type='password']"))).sendKeys("automation123");
 			
