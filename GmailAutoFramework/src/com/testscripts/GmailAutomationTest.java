@@ -16,19 +16,22 @@ public class GmailAutomationTest extends WebDriverFactory {
 	 
 	
 	@Test(priority = 1)
-	public void irnit2() throws Exception
+	public void irnit1() throws Exception
 	{
 		login = new LoginPage();
 		
 		login.login();
 		Thread.sleep(2000);
 	}
-//	@Test(dataProvider="CompanyNameProvider", dataProviderClass=DataProviders.class, priority = 2)  // this is not yet used
-	public void successfulLogin(String ficsTask, /*String fReviewEmail,String sReviewEmail, String defectcntadd,*/String logadd) throws Exception
+ 
+	
+	
+	@Test(priority = 2)
+	public void irnit2() throws Exception
 	{
 		openEmail = new OpenEmail();
-//		openEmail.OpenEmail();
-		
+		openEmail.email();
+		Thread.sleep(2000);
 	}
 	
 	public static void main(String[] args) {

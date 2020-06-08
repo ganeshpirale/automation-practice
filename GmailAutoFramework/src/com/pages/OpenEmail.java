@@ -18,6 +18,9 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.commons.Utility;
 import com.commons.WebDriverFactory;
@@ -28,48 +31,9 @@ public class OpenEmail {
 	// its creating new memory allocation and assigning the null value
 	WebDriver driver = WebDriverFactory.getDriver();
 
-	/*
-	 * @FindBy(xpath=".//*[@id='quickSearchInput']") WebElement search;
-	 * 
-	 * @FindBy(xpath=".//*[@id='edit-issue']") WebElement clickEdit;
-	 * 
-	 * 
-	 * @FindBy(xpath=".//*[@id='customfield_24501']") WebElement fReviewAdd;
-	 * 
-	 * @FindBy(xpath=".//*[@id='customfield_24502']") WebElement sReviewAdd;
-	 */
+	WebDriverWait wait = WebDriverFactory.waitFor();
 
-	/*
-	 * @FindBy(xpath=".//*[@id='opsbar-operations_more']/span") WebElement
-	 * clickMore;
-	 * 
-	 * @FindBy(xpath=".//*[@id='log-work']/a/span") WebElement clickLogWork;
-	 * 
-	 * @FindBy(xpath=".//*[@id='log-work-time-logged']") WebElement addTime;
-	 * 
-	 * @FindBy(xpath=".//*[@id='log-work-submit']") WebElement clickLog;
-	 */
-
-	/*
-	 * @FindBy(xpath=".//*[@id='customfield_22410']") WebElement defect;
-	 * 
-	 * 
-	 * @FindBy(xpath=".//*[@id='edit-issue-submit']") WebElement clickUpdate;
-	 */
-
-	@FindBy(xpath = "//a[text()='Start timer']")
-	WebElement startTime;
-
-	// @FindBy(xpath="//div[@title='Add project")
-	@FindBy(xpath = "//div[text()='Add project']")
-	WebElement addProject;
-
-	@FindBy(xpath = "//span[text()='Bristlecone']")
-	// ul[@class='client-list']//li[2]
-	WebElement addBrist;
-
-	@FindBy(xpath = "//div[@id='toggl-button-update']")
-	WebElement clickDone;
+	 
 
 	 
 	
@@ -77,20 +41,29 @@ public class OpenEmail {
 		PageFactory.initElements(driver, this);
 	}
 
-	public long getSystemTime() {
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-		Date date = new Date();
-		String date1 = dateFormat.format(date);
-		// System.out.println("Current date and time is " + date1);
-		long currentTime = date.getTime();
-		return currentTime;
-	}
-
-	public double getRandomIntegerBetweenRange(double min, double max) {
-		double x = (int) (Math.random() * ((max - min) + 1)) + min;
-		return x;
-	}
-
 	 
+	
+	public void email() throws InterruptedException
+	{
+
+	
+	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//tr[@class='zA yO'][@id=':32']"))).click();
+	
+	
+
+	String text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@name='^i']/preceding::h2[1]"))).getText();
+	
+
+	System.out.println(text);
+	
+	
+//	 assertEquals(text, "Security alert");
+	 
+	Assert.assertEquals(text, "Security alert");
+	
+	System.out.println("Passed");
+
+
+	}
 
 }

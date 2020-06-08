@@ -42,7 +42,10 @@ public class WebDriverFactory {
 	public static String chromeDriverPath = "C:/Ganesh/Data/Selenium/Jar/chromedriver83/chromedriver.exe";
 	public static ExtentReports extent;
 	public static ExtentTest test;
-
+	
+	public static WebDriverWait wait;
+	
+ 
 //	@BeforeSuite
 	public void beforeSuite()
 	{
@@ -73,7 +76,7 @@ public class WebDriverFactory {
 		 
 //		ChromeOptions chromeOptions = new ChromeOptions();
 		
-		WebDriver driver=new ChromeDriver();
+		driver=new ChromeDriver();
 		
 		
 
@@ -82,13 +85,16 @@ public class WebDriverFactory {
 
 //		driver = new ChromeDriver(capabilities);
 		
-		WebDriverWait wait = new WebDriverWait(driver,10);
+//		WebDriverWait wait = new WebDriverWait(driver,10);
 		
 		driver.get("https://www.google.com/intl/en-GB/gmail/about/#");
 
 		driver.manage().window().maximize();
 
 		Thread.sleep(2000); 
+		
+		
+		wait = new WebDriverWait(driver,10);
 		 
 	}
 		
@@ -117,6 +123,17 @@ public class WebDriverFactory {
 		System.out.println("in getDriver");
 		return driver;
 	}
+	
+	public static WebDriverWait waitFor()
+	{
+		System.out.println("in getDriver");
+		return wait;
+	}
+	
+	
+	
+	
+	
 	
 	
 	
