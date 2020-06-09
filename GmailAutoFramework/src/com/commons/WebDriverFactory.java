@@ -39,7 +39,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class WebDriverFactory {
 	
 	public static WebDriver driver;
-	public static String chromeDriverPath = "C:\\Users\\ganesh.pirale\\git\\repository\\GmailAutoFramework\\ChromeDriver\\chromedriver.exe";
+//	public static String chromeDriverPath = "C:\\Users\\ganesh.pirale\\git\\repository\\GmailAutoFramework\\ChromeDriver\\chromedriver.exe";
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	
@@ -68,8 +68,15 @@ public class WebDriverFactory {
 		
 		System.out.println("launch chrome: in before test");
 		
-		System.setProperty("webdriver.chrome.driver",
-				chromeDriverPath);
+//		System.setProperty("webdriver.chrome.driver",chromeDriverPath);
+		
+		
+		String path = System.getProperty("user.dir");   // return project folder path
+		System.out.println("chrome system path" + path);
+
+		String driverpath = path + "\\ChromeDriver\\chromedriver.exe";   // return driver folder path 
+
+		System.setProperty("webdriver.chrome.driver",driverpath );
 		
 		
 		Thread.sleep(3000);
